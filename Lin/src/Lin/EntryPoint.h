@@ -4,9 +4,12 @@
 
 extern Lin::Application* Lin::CreateApplication();
 
-int main()
+int main(int argc, char** argv)
 {
-	printf("111\n");
+	Lin::Log::Init();
+	LIN_INFO("Initialize Client log.\n");
+	LIN_CORE_TRACE("Initial Core trace.\n");
+
 	auto app = Lin::CreateApplication();
 	app->Run();
 	delete app;
